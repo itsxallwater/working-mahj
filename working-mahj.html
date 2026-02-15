@@ -30,7 +30,7 @@
 <h1 class="hero-anim ha2">Your New<br><span>Power Move</span></h1>
 <p class="hero-sub hero-anim ha3">Boutique mahjong lessons designed for busy Phoenix moms. Learn the game, find your crew, and carve out time that's truly yours.</p>
 <div class="hero-buttons hero-anim ha4">
-<a href="#rates" class="btn-gold">View Lessons</a>
+<a href="#rates" class="btn-gold">View Rates</a>
 <a href="#about" class="btn-ghost">Learn More</a>
 </div>
 <div class="scroll-indicator hero-anim" style="transition-delay:1s">
@@ -160,16 +160,6 @@
 </div>
 </section>
 
-<script>
-var nav=document.getElementById('mainNav');
-window.addEventListener('scroll',function(){if(window.scrollY>40){nav.classList.add('scrolled')}else{nav.classList.remove('scrolled')}});
-var sections=['hero','about','rates','contact'];
-var navLinks=document.querySelectorAll('.nav-link');
-var sO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){navLinks.forEach(function(l){l.classList.remove('active')});var a=document.querySelector('.nav-link[data-section="'+entry.target.id+'"]');if(a)a.classList.add('active')}})},{threshold:0.3});
-sections.forEach(function(id){var el=document.getElementById(id);if(el)sO.observe(el)});
-setTimeout(function(){document.querySelectorAll('.hero-anim').forEach(function(el){el.classList.add('show')})},100);
-var fO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:0.1});
-document.querySelectorAll('.fade-up').forEach(function(el){fO.observe(el)});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
