@@ -33,8 +33,11 @@
 <a href="#rates" class="btn-gold">View Rates</a>
 <a href="#about" class="btn-ghost">Learn More</a>
 </div>
-<div class="scroll-indicator hero-anim" style="transition-delay:1s">
-<svg width="24" height="36" viewBox="0 0 24 36" fill="none"><rect x="1" y="1" width="22" height="34" rx="11" stroke="white" stroke-width="2"/><circle class="scroll-dot" cx="12" cy="10" r="3" fill="white"/></svg>
+<div class="scroll-indicator hero-anim" data-next-section="about" style="transition-delay:1s">
+<svg width="40" height="54" viewBox="0 0 48 58" fill="none">
+<rect x="4" y="4" width="40" height="50" rx="6" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2"/>
+<path class="scroll-arrow" d="M24 20 L24 38 M16 30 L24 38 L32 30" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
 </div>
 </div>
 </section>
@@ -132,15 +135,18 @@
 <div class="section-tag tag-gold-dark">Get In Touch</div>
 <h2 class="contact-title">Ready to <span>Play?</span></h2>
 <p class="contact-desc">Drop us a line and we'll match you with the perfect starting point. No commitment — just curiosity.</p>
-<div class="contact-item fade-up d2"><div class="contact-icon">📍</div><span class="contact-label">Serving the greater Phoenix area</span></div>
-<div class="contact-item fade-up d3"><div class="contact-icon">📧</div><span class="contact-label">hello@workingmahj.com</span></div>
-<div class="contact-item fade-up d4"><div class="contact-icon">📱</div><span class="contact-label">@workingmahj</span></div>
+<div class="contact-item fade-up d2"><div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="contact-label">Serving the greater Phoenix area</span></div>
+<div class="contact-item fade-up d3"><div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><a href="#contactForm" class="contact-label contact-link" id="emailFocusLink">workingmahj@gmail.com</a></div>
+<div class="contact-item fade-up d4"><div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div><a href="https://instagram.com/workingmahj" target="_blank" rel="noopener noreferrer" class="contact-label contact-link">@workingmahj on Instagram</a></div>
 </div>
 <div class="contact-form fade-up d2">
-<div class="form-fields">
-<input type="text" class="form-input" placeholder="Your name" />
-<input type="email" class="form-input" placeholder="Email address" />
-<select class="form-input">
+<form id="contactForm" class="form-fields" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+<input type="hidden" name="subject" value="New inquiry from Working Mahj website">
+<input type="hidden" name="from_name" value="Working Mahj Contact Form">
+<input type="text" name="name" class="form-input" placeholder="Your name" required />
+<input type="email" name="email" class="form-input" placeholder="Email address" required />
+<select name="interest" class="form-input" required>
 <option value="" disabled selected>I'm interested in...</option>
 <option value="beginner">Group Beginner Lesson</option>
 <option value="refresher">Refresher Lesson</option>
@@ -149,9 +155,10 @@
 <option value="card">NMJL Card</option>
 <option value="other">Just curious!</option>
 </select>
-<textarea class="form-input" placeholder="Tell us a bit about yourself (optional)" rows="4"></textarea>
-<button class="btn-submit">Send Message</button>
-</div>
+<textarea name="message" class="form-input" placeholder="Tell us a bit about yourself (optional)" rows="4"></textarea>
+<button type="submit" class="btn-submit">Send Message</button>
+<div class="form-status" id="formStatus"></div>
+</form>
 </div>
 </div>
 <div class="footer">
@@ -159,6 +166,12 @@
 <div class="footer-right">Built with 🀄 and ☀️</div>
 </div>
 </section>
+
+<button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
 
 <script src="script.js"></script>
 </body>
