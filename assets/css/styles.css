@@ -60,7 +60,7 @@ body{font-family:'DM Sans',sans-serif;overflow-x:hidden;background:#1A2A3A}
 .section-title .blue{color:var(--blue)}
 .section-title .gold{color:var(--gold)}
 .section-desc{font-size:17px;color:var(--gray);line-height:1.7;max-width:580px;margin:0 auto}
-.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:48px}
+.values-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:48px}@media(min-width:500px){.values-grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:900px){.values-grid{grid-template-columns:repeat(4,1fr)}}
 .value-card{background:var(--white);border-radius:20px;padding:36px 28px;border:1px solid rgba(77,166,255,.08);transition:transform .3s,box-shadow .3s}
 .value-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(77,166,255,.08)}
 .value-icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--blue-pale),var(--cream));display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px}
